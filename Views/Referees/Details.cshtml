@@ -1,0 +1,54 @@
+@model Credibled.Models.Referee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Referee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Enabled)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Enabled)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RefereeEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RefereeEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RefereeEmployer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RefereeEmployer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RefereeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RefereeName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RefereeTelephone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RefereeTelephone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RefereeTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RefereeTitle)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
