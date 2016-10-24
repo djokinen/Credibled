@@ -12,16 +12,15 @@ namespace Credibled.Models
 		public Guid ID { get; set; }
 
 		[DefaultValue(true)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
 		public Boolean Enabled { get; set; }
 
 		[Required]
-		[Editable(false, AllowInitialValue = true)]
 		[DataType(DataType.DateTime)]
-		[Display(GroupName = "Candidate", Description = "Created date", Name = "Created", Prompt = "Created date", ShortName = "Created")]
+		[Display(AutoGenerateField =false, GroupName = "Candidate", Description = "Created date", Name = "Created", Prompt = "Created date", ShortName = "Created")]
 		public DateTime CreatedDate { get; set; }
 
 		[Required]
-		[Editable(false, AllowInitialValue = true)]
 		[Display(GroupName = "Candidate", Description = "Last modified date", Name = "Modified", Prompt = "Last modified date", ShortName = "Modified")]
 		[DataType(DataType.DateTime)]
 		public DateTime LastModifiedDate { get; set; }
@@ -49,6 +48,7 @@ namespace Credibled.Models
 
 		[Required]
 		[Display(GroupName = "Referee", Description = "Referee Name", Name = "Referee", Prompt = "Referee name", ShortName = "Referee")]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
 		public string RefereeId { get; set; }
 	}
 }
