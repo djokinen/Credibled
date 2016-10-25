@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Credibled.Data;
 using Credibled.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Credibled.Controllers
 {
@@ -60,6 +61,17 @@ namespace Credibled.Controllers
 			if (ModelState.IsValid)
 			{
 				referenceRequest.ID = Guid.NewGuid();
+
+				var store = new UserStore<ApplicationUser>(_context);
+				ApplicationUser user = await store.FindByNameAsync(User.Identity.Name);
+				referenceRequest.ID = Guid.NewGuid();
+				referenceRequest.CandidateId = user.Id;
+				referenceRequest.Enabled = true;
+				referenceRequest.CreatedDate = DateTime.Now;
+				referenceRequest.LastModifiedDate = DateTime.Now;
+				referenceRequest.RefereeId = "incomplete property assignment";
+				// referenceRequest.CandidateId = ApplicationUser.
+
 				_context.Add(referenceRequest);
 				await _context.SaveChangesAsync();
 				return RedirectToAction("Index");
