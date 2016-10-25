@@ -100,7 +100,7 @@ namespace Credibled.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Guid id, [Bind("ID,CandidateEndDate,CandidateId,CandidateJobDuties,CandidateStartDate,CreatedDate,Enabled,LastModifiedDate,RefereeId")] ReferenceRequest referenceRequest)
+		public async Task<IActionResult> Edit(Guid id, [Bind("ID,CandidateEndDate,CandidateJobDuties,CandidateStartDate,CreatedDate,Enabled,LastModifiedDate,RefereeId")] ReferenceRequest referenceRequest)
 		{
 			if (id != referenceRequest.ID)
 			{

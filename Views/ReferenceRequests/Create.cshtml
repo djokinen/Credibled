@@ -7,73 +7,67 @@
 <h2>Create</h2>
 
 <form asp-action="Create">
-    <div class="form-horizontal">
-        <h4>ReferenceRequest</h4>
-        <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="CandidateEndDate" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CandidateEndDate" class="form-control" />
-                <span asp-validation-for="CandidateEndDate" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CandidateId" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CandidateId" class="form-control" />
-                <span asp-validation-for="CandidateId" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CandidateJobDuties" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CandidateJobDuties" class="form-control" />
-                <span asp-validation-for="CandidateJobDuties" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CandidateStartDate" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CandidateStartDate" class="form-control" />
-                <span asp-validation-for="CandidateStartDate" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CreatedDate" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CreatedDate" class="form-control" />
-                <span asp-validation-for="CreatedDate" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <div class="checkbox">
-                    <input asp-for="Enabled" />
-                    <label asp-for="Enabled"></label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="LastModifiedDate" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="LastModifiedDate" class="form-control" />
-                <span asp-validation-for="LastModifiedDate" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="RefereeId" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="RefereeId" class="form-control" />
-                <span asp-validation-for="RefereeId" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+	<div class="form-horizontal">
+		<h4>ReferenceRequest</h4>
+		<hr />
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<div class="form-group">
+			<label asp-for="CandidateEndDate" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<input asp-for="CandidateEndDate" class="form-control" />
+				<span asp-validation-for="CandidateEndDate" class="text-danger" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label asp-for="CandidateJobDuties" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<input asp-for="CandidateJobDuties" class="form-control" />
+				<span asp-validation-for="CandidateJobDuties" class="text-danger" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label asp-for="CandidateStartDate" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<input asp-for="CandidateStartDate" class="form-control" />
+				<span asp-validation-for="CandidateStartDate" class="text-danger" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label asp-for="CreatedDate" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<input asp-for="CreatedDate" class="form-control" />
+				<span asp-validation-for="CreatedDate" class="text-danger" />
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<div class="checkbox">
+					<input asp-for="Enabled" />
+					<label asp-for="Enabled"></label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label asp-for="LastModifiedDate" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<input asp-for="LastModifiedDate" class="form-control" />
+				<span asp-validation-for="LastModifiedDate" class="text-danger" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label asp-for="RefereeId" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<input asp-for="RefereeId" class="form-control" />
+				<span asp-validation-for="RefereeId" class="text-danger" />
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" value="Create" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
 </form>
 
 <div>

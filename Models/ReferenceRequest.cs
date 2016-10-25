@@ -27,11 +27,9 @@ namespace Credibled.Models
 
 		#endregion
 
-		[Required]
 		[Display(GroupName = "Candidate", Description = "Candidate Name", Name = "Candidate", Prompt = "Candidate name", ShortName = "Candidate")]
 		public String CandidateId { get; set; }
 
-		[Required]
 		[DataType(DataType.Date)]
 		[Display(GroupName = "Candidate", Description = "Candidate start date", Name = "Start", Prompt = "Start Date", ShortName = "Start")]
 		public DateTime CandidateStartDate { get; set; }
