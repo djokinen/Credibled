@@ -69,11 +69,11 @@ namespace Credibled.Controllers
 				referenceRequest.Enabled = true;
 				referenceRequest.CreatedDate = DateTime.Now;
 				referenceRequest.LastModifiedDate = DateTime.Now;
-				referenceRequest.RefereeId = "incomplete property assignment";
+				// referenceRequest.RefereeId = "Incomplete property assignment";
 				// referenceRequest.CandidateId = ApplicationUser.
 
 				_context.Add(referenceRequest);
-				await _context.SaveChangesAsync();
+				int retval = await _context.SaveChangesAsync();
 				return RedirectToAction("Index");
 			}
 			return View(referenceRequest);

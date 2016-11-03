@@ -17,7 +17,7 @@ namespace Credibled.Models
 
 		[Required]
 		[DataType(DataType.DateTime)]
-		[Display(AutoGenerateField =false, GroupName = "Candidate", Description = "Created date", Name = "Created", Prompt = "Created date", ShortName = "Created")]
+		[Display(AutoGenerateField = false, GroupName = "Candidate", Description = "Created date", Name = "Created", Prompt = "Created date", ShortName = "Created")]
 		public DateTime CreatedDate { get; set; }
 
 		[Required]
@@ -45,8 +45,28 @@ namespace Credibled.Models
 		public String CandidateJobDuties { get; set; }
 
 		[Required]
+		[DataType(DataType.Text)]
 		[Display(GroupName = "Referee", Description = "Referee Name", Name = "Referee", Prompt = "Referee name", ShortName = "Referee")]
-		[DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-		public string RefereeId { get; set; }
+		public string RefereeName { get; set; }
+
+		[Required]
+		[DataType(DataType.Text)]
+		[Display(GroupName = "Referee", Description = "Referee Employer", Name = "Referee Employer", Prompt = "Referee Employer", ShortName = "Referee Employer")]
+		public string RefereeEmployer { get; set; }
+
+		[Required]
+		[DataType(DataType.Text)]
+		[Display(GroupName = "Referee", Description = "Referee Title", Name = "Referee Title", Prompt = "Referee Title", ShortName = "Referee Title")]
+		public string RefereeTitle { get; set; }
+
+		[Required]
+		[DataType(DataType.EmailAddress)]
+		[Display(GroupName = "Referee", Description = "Referee Email", Name = "Referee Email", Prompt = "Referee Email", ShortName = "Referee Email")]
+		public string RefereeEmail { get; set; }
+
+		[Required]
+		[DataType(DataType.PhoneNumber)]
+		[Display(GroupName = "Referee", Description = "Referee Phone", Name = "Referee Phone", Prompt = "Referee Phone", ShortName = "Phone")]
+		public string RefereeTelephone { get; set; }
 	}
 }
