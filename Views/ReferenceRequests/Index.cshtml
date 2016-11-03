@@ -34,7 +34,19 @@
                 @Html.DisplayNameFor(model => model.LastModifiedDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RefereeId)
+                @Html.DisplayNameFor(model => model.RefereeEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefereeEmployer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefereeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefereeTelephone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefereeTitle)
             </th>
             <th></th>
         </tr>
@@ -64,7 +76,19 @@
                 @Html.DisplayFor(modelItem => item.LastModifiedDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RefereeId)
+                @Html.DisplayFor(modelItem => item.RefereeEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RefereeEmployer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RefereeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RefereeTelephone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RefereeTitle)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

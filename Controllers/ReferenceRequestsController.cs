@@ -7,12 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Credibled.Data;
 using Credibled.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Credibled.Controllers
 {
-	[Authorize]
 	public class ReferenceRequestsController : Controller
 	{
 		private readonly ApplicationDbContext _context;
@@ -56,24 +54,21 @@ namespace Credibled.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("ID,CandidateEndDate,CandidateId,CandidateJobDuties,CandidateStartDate,CreatedDate,Enabled,LastModifiedDate,RefereeId")] ReferenceRequest referenceRequest)
+		public async Task<IActionResult> Create([Bind("ID,CandidateEndDate,CandidateId,CandidateJobDuties,CandidateStartDate,CreatedDate,Enabled,LastModifiedDate,RefereeEmail,RefereeEmployer,RefereeName,RefereeTelephone,RefereeTitle")] ReferenceRequest referenceRequest)
 		{
 			if (ModelState.IsValid)
 			{
-				referenceRequest.ID = Guid.NewGuid();
-
 				var store = new UserStore<ApplicationUser>(_context);
 				ApplicationUser user = await store.FindByNameAsync(User.Identity.Name);
+
 				referenceRequest.ID = Guid.NewGuid();
-				referenceRequest.CandidateId = user.Id;
-				referenceRequest.Enabled = true;
 				referenceRequest.CreatedDate = DateTime.Now;
+				referenceRequest.Enabled = true;
 				referenceRequest.LastModifiedDate = DateTime.Now;
-				// referenceRequest.RefereeId = "Incomplete property assignment";
-				// referenceRequest.CandidateId = ApplicationUser.
+				referenceRequest.CandidateId = user.Id;
 
 				_context.Add(referenceRequest);
-				int retval = await _context.SaveChangesAsync();
+				await _context.SaveChangesAsync();
 				return RedirectToAction("Index");
 			}
 			return View(referenceRequest);
@@ -100,7 +95,7 @@ namespace Credibled.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Guid id, [Bind("ID,CandidateEndDate,CandidateJobDuties,CandidateStartDate,CreatedDate,Enabled,LastModifiedDate,RefereeId")] ReferenceRequest referenceRequest)
+		public async Task<IActionResult> Edit(Guid id, [Bind("ID,CandidateEndDate,CandidateId,CandidateJobDuties,CandidateStartDate,CreatedDate,Enabled,LastModifiedDate,RefereeEmail,RefereeEmployer,RefereeName,RefereeTelephone,RefereeTitle")] ReferenceRequest referenceRequest)
 		{
 			if (id != referenceRequest.ID)
 			{

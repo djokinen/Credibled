@@ -1,86 +1,139 @@
 @model Credibled.Models.ReferenceRequest
 
 @{
-    ViewData["Title"] = "Edit";
+	ViewData["Title"] = "Edit";
 }
 
 <h2>Edit</h2>
 
 <form asp-action="Edit">
-    <div class="form-horizontal">
-        <h4>ReferenceRequest</h4>
-        <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <input type="hidden" asp-for="ID" />
-        <div class="form-group">
-            <label asp-for="CandidateEndDate" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CandidateEndDate" class="form-control" />
-                <span asp-validation-for="CandidateEndDate" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CandidateId" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CandidateId" class="form-control" />
-                <span asp-validation-for="CandidateId" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CandidateJobDuties" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CandidateJobDuties" class="form-control" />
-                <span asp-validation-for="CandidateJobDuties" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CandidateStartDate" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CandidateStartDate" class="form-control" />
-                <span asp-validation-for="CandidateStartDate" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CreatedDate" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CreatedDate" class="form-control" />
-                <span asp-validation-for="CreatedDate" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <div class="checkbox">
-                    <input asp-for="Enabled" />
-                    <label asp-for="Enabled"></label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="LastModifiedDate" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="LastModifiedDate" class="form-control" />
-                <span asp-validation-for="LastModifiedDate" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="RefereeId" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="RefereeId" class="form-control" />
-                <span asp-validation-for="RefereeId" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+	<div class="form-horizontal">
+		<h4>Reference Request</h4>
+		<hr />
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<input type="hidden" asp-for="ID" />
+
+		<fieldset>
+			<legend>Candidate Info</legend>
+
+			<div class="form-group">
+				<label asp-for="CandidateId" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="CandidateId" class="form-control" />
+					<span asp-validation-for="CandidateId" class="text-danger" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="CandidateStartDate" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="CandidateStartDate" class="form-control" />
+					<span asp-validation-for="CandidateStartDate" class="text-danger" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="CandidateEndDate" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="CandidateEndDate" class="form-control" />
+					<span asp-validation-for="CandidateEndDate" class="text-danger" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="CandidateJobDuties" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="CandidateJobDuties" class="form-control" />
+					<span asp-validation-for="CandidateJobDuties" class="text-danger" />
+				</div>
+			</div>
+
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Referee Info</legend>
+
+			<div class="form-group">
+				<label asp-for="RefereeEmail" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="RefereeEmail" class="form-control" />
+					<span asp-validation-for="RefereeEmail" class="text-danger" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label asp-for="RefereeEmployer" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="RefereeEmployer" class="form-control" />
+					<span asp-validation-for="RefereeEmployer" class="text-danger" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label asp-for="RefereeName" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="RefereeName" class="form-control" />
+					<span asp-validation-for="RefereeName" class="text-danger" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label asp-for="RefereeTelephone" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="RefereeTelephone" class="form-control" />
+					<span asp-validation-for="RefereeTelephone" class="text-danger" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label asp-for="RefereeTitle" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="RefereeTitle" class="form-control" />
+					<span asp-validation-for="RefereeTitle" class="text-danger" />
+				</div>
+			</div>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Properties</legend>
+
+			<div class="form-group">
+				<label asp-for="LastModifiedDate" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="LastModifiedDate" class="form-control" />
+					<span asp-validation-for="LastModifiedDate" class="text-danger" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="CreatedDate" class="col-md-2 control-label"></label>
+				<div class="col-md-10">
+					<input asp-for="CreatedDate" class="form-control" />
+					<span asp-validation-for="CreatedDate" class="text-danger" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<div class="checkbox">
+						<input asp-for="Enabled" />
+						<label asp-for="Enabled"></label>
+					</div>
+				</div>
+			</div>
+
+		</fieldset>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" value="Save" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
 </form>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+	<a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

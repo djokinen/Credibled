@@ -46,22 +46,22 @@ namespace Credibled.Models
 
 		[Required]
 		[DataType(DataType.Text)]
-		[Display(GroupName = "Referee", Description = "Referee Name", Name = "Referee", Prompt = "Referee name", ShortName = "Referee")]
+		[Display(GroupName = "Referee", Description = "Referee Name", Name = "Referee Name", Prompt = "Referee name", ShortName = "Name")]
 		public string RefereeName { get; set; }
 
 		[Required]
 		[DataType(DataType.Text)]
-		[Display(GroupName = "Referee", Description = "Referee Employer", Name = "Referee Employer", Prompt = "Referee Employer", ShortName = "Referee Employer")]
+		[Display(GroupName = "Referee", Description = "Referee Employer", Name = "Referee Employer", Prompt = "Referee Employer", ShortName = "Employer")]
 		public string RefereeEmployer { get; set; }
 
 		[Required]
 		[DataType(DataType.Text)]
-		[Display(GroupName = "Referee", Description = "Referee Title", Name = "Referee Title", Prompt = "Referee Title", ShortName = "Referee Title")]
+		[Display(GroupName = "Referee", Description = "Referee Title", Name = "Referee Title", Prompt = "Referee Title", ShortName = "Title")]
 		public string RefereeTitle { get; set; }
 
 		[Required]
 		[DataType(DataType.EmailAddress)]
-		[Display(GroupName = "Referee", Description = "Referee Email", Name = "Referee Email", Prompt = "Referee Email", ShortName = "Referee Email")]
+		[Display(GroupName = "Referee", Description = "Referee Email", Name = "Referee Email", Prompt = "Referee Email", ShortName = "Email")]
 		public string RefereeEmail { get; set; }
 
 		[Required]
